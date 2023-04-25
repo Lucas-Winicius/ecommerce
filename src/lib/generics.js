@@ -47,6 +47,18 @@ class Generics {
         emptyField: "promotionPrice",
       };
   }
+
+  checkDiscountPrice(promotion, promotionPrice, price) {
+    if (!!promotion && promotionPrice > price)
+      throw {
+        success: false,
+        status: 400,
+        message: "The discount price cannot be higher than the regular price.",
+        secondaryMessage:
+          "Oops! It looks like someone is trying to play with mathematical logic here... The discount price cannot be greater than the regular price, unless you're in a parallel dimension where that makes sense!",
+        emptyField: "promotionPrice",
+      };
+  }
 }
 
 export default new Generics();
