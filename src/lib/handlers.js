@@ -9,7 +9,7 @@ class Handles {
       secondaryMessage:
         obj.secondaryMessage ||
         "It seems like there's a ghost in the system! We tried to find the error, but it mysteriously vanished. We're working on exorcising it and solving the issue, please try again later.",
-      error: obj.data,
+      error: obj,
     };
   }
 

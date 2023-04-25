@@ -1,5 +1,6 @@
 import prisma from "../lib/prisma.js";
 import handlers from "../lib/handlers.js";
+import treatment from "../lib/treatment.js";
 
 class Products {
   async get(req, res) {
@@ -8,7 +9,7 @@ class Products {
     try {
       products = await prisma.product.findMany({});
     } catch (e) {
-      const err = handlers.onError({ data: e });
+      const err = handlers.onError(e);
       return res.status(err.status).json(err);
     }
 
@@ -22,8 +23,29 @@ class Products {
     return res.status(responseObj.status).json(responseObj);
   }
 
-  post(req, res) {
-    res.send("Produtos - Post");
+  async post(req, res) {
+    let body;
+    let product;
+
+    try {
+      body = treatment.productBody(req.body);
+      product = await prisma.product.create({
+        data: body,
+      });
+    } catch (e) {
+      const err = handlers.onError(e);
+      return res.status(err.status).json(err);
+    }
+
+    const responseObj = handlers.onSuccess({
+      status: 201,
+      message: "The product was successfully created!",
+      secondaryMessage:
+        "Great job! You're now officially a 'product maker'! Your products are so amazing that the competition is starting to break a sweat!",
+      data: product,
+    });
+
+    return res.status(responseObj.status).json(responseObj);
   }
 }
 
