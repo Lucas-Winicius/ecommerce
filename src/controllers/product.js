@@ -27,6 +27,28 @@ class Product {
 
     return res.status(responseObj.status).json(responseObj);
   }
+
+  async delete(req, res) {
+    let product;
+    try {
+      const id = treatment.toNumber(req.params.id);
+      product = await prisma.product.delete({
+        where: { id },
+      });
+    } catch (e) {
+      const err = handlers.onError(e);
+      return res.status(err.status).json(err);
+    }
+
+    const responseObj = handlers.onSuccess({
+      message: "Product successfully deleted.",
+      secondaryMessage:
+        "Product deleted! It may have gone to a parallel dimension or turned into cosmic dust, but here in our system, it no longer exists. Rest in peace (or pieces).",
+      data: product,
+    });
+
+    return res.status(responseObj.status).json(responseObj);
+  }
 }
 
 export default new Product();
