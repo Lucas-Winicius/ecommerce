@@ -5,6 +5,7 @@ class Treatment {
     generics.description(description);
     generics.price(price);
     generics.promotionalPrice(promotion, promotionPrice);
+    generics.checkDiscountPrice(promotion, promotionPrice, price);
 
     return {
       name,
