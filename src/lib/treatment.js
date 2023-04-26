@@ -16,6 +16,18 @@ class Treatment {
     };
   }
 
+  basic({ name, description, price, promotion, promotionPrice }) {
+    generics.basicCheckDiscountPrice(promotionPrice, price);
+
+    return {
+      name,
+      description,
+      price,
+      promotion,
+      promotionPrice,
+    };
+  }
+
   toNumber(string) {
     const number = Number(string);
 

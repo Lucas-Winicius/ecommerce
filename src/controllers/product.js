@@ -49,6 +49,30 @@ class Product {
 
     return res.status(responseObj.status).json(responseObj);
   }
+
+  async patch(req, res) {
+    let product;
+    try {
+      const id = treatment.toNumber(req.params.id);
+      const body = treatment.basic(req.body);
+      product = await prisma.product.update({
+        where: { id },
+        data: body,
+      });
+    } catch (e) {
+      const err = handlers.onError(e);
+      return res.status(err.status).json(err);
+    }
+
+    const responseObj = handlers.onSuccess({
+      message: "Product successfully updated.",
+      secondaryMessage:
+        "Wow! You have successfully updated the product. We hope you didn't add anything too strange, like a dinosaur egg or a magic wand. Anyway, thanks for keeping our records up to date!",
+      data: product,
+    });
+
+    return res.status(responseObj.status).json(responseObj);
+  }
 }
 
 export default new Product();
