@@ -1,6 +1,7 @@
 import userTreatment from "../lib/userTreatment.js";
 import handlers from "../lib/handlers.js";
 import prisma from "../lib/prisma.js";
+import jwt from "jsonwebtoken";
 
 class User {
   async post(req, res) {
@@ -17,6 +18,9 @@ class User {
       return res.status(err.status).json(err);
     }
 
+    const token = jwt.sign(user, process.env.JWT_SECRET);
+    token;
+
     const responseObj = handlers.onSuccess({
       status: 201,
       message: "User registered successfully.",
@@ -25,7 +29,10 @@ class User {
       data: userPrisma,
     });
 
-    return res.status(responseObj.status).json(responseObj);
+    return res
+      .cookie("jwt", token, { httpOnly: true, maxAge: 604800000 })
+      .status(responseObj.status)
+      .json(responseObj);
   }
 }
 
