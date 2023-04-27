@@ -1,4 +1,4 @@
-import generics from "./generics.js";
+import generics from "./genericsTreatments.js";
 class Treatment {
   productBody({ name, description, price, promotion, promotionPrice, image }) {
     generics.name(name);
