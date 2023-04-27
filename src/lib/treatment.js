@@ -1,6 +1,6 @@
 import generics from "./generics.js";
 class Treatment {
-  productBody({ name, description, price, promotion, promotionPrice }) {
+  productBody({ name, description, price, promotion, promotionPrice, image }) {
     generics.name(name);
     generics.description(description);
     generics.price(price);
@@ -13,10 +13,11 @@ class Treatment {
       price,
       promotion,
       promotionPrice,
+      image,
     };
   }
 
-  basic({ name, description, price, promotion, promotionPrice }) {
+  basic({ name, description, price, promotion, promotionPrice, image }) {
     generics.basicCheckDiscountPrice(promotionPrice, price);
 
     return {
@@ -25,6 +26,7 @@ class Treatment {
       price,
       promotion,
       promotionPrice,
+      image,
     };
   }
 
