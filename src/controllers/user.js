@@ -18,8 +18,10 @@ class User {
       return res.status(err.status).json(err);
     }
 
-    const token = jwt.sign(user, process.env.JWT_SECRET);
-    token;
+    const token = jwt.sign(
+      { name: user.name, email: user.email, password: user.password },
+      process.env.JWT_SECRET
+    );
 
     const responseObj = handlers.onSuccess({
       status: 201,

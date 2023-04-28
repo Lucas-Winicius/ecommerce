@@ -29,13 +29,14 @@ class UserTreatment {
     return T_password;
   }
 
-  async treatUser({ name, email, password }) {
+  async treatUser({ name, email, password, image }) {
     genericsTreatments.name(name);
     const T_email = this.email(email);
     const T_password = await this.password(password);
 
     return {
       name,
+      image,
       email: T_email,
       password: T_password,
     };
