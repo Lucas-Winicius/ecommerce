@@ -53,6 +53,21 @@ class UserSession {
       .status(responseObj.status)
       .json(responseObj);
   }
+
+  async logout(req, res) {
+    const responseObj = handlers.onSuccess({
+      status: 200,
+      message: "User logged out",
+      secondaryMessage:
+        "Oh no! Did you hit the wrong button? 🤔 Or did you just get bored of all this secure authentication stuff? Either way, we hope to see you back soon. Goodbye for now!",
+      data: {},
+    });
+
+    res
+      .cookie("jwt", "", { httpOnly: true, maxAge: 1 })
+      .status(200)
+      .json(responseObj);
+  }
 }
 
 export default new UserSession();
