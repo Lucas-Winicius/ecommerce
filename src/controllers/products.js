@@ -1,6 +1,6 @@
 import prisma from "../lib/prisma.js";
 import handlers from "../lib/handlers.js";
-import treatment from "../lib/treatment.js";
+import Validations from "../lib/Validations.js";
 
 class Products {
   async get(req, res) {
@@ -28,7 +28,7 @@ class Products {
     let product;
 
     try {
-      body = treatment.productBody(req.body);
+      body = Validations.productBody(req.body);
       product = await prisma.product.create({
         data: body,
       });

@@ -1,14 +1,13 @@
 import prisma from "../lib/prisma.js";
 import handlers from "../lib/handlers.js";
-import treatment from "../lib/treatment.js";
+import validations from "../lib/Validations.js";
 
 class Product {
   async get(req, res) {
     let product;
 
     try {
-      const id = treatment.toNumber(req.params.id);
-      console.log(id);
+      const id = validations.toNumber(req.params.id);
       product = await prisma.product.findUnique({
         where: { id },
       });
@@ -31,7 +30,7 @@ class Product {
   async delete(req, res) {
     let product;
     try {
-      const id = treatment.toNumber(req.params.id);
+      const id = validations.toNumber(req.params.id);
       product = await prisma.product.delete({
         where: { id },
       });
@@ -53,8 +52,8 @@ class Product {
   async patch(req, res) {
     let product;
     try {
-      const id = treatment.toNumber(req.params.id);
-      const body = treatment.basic(req.body);
+      const id = validations.toNumber(req.params.id);
+      const body = validations.basicProduct(req.body);
       product = await prisma.product.update({
         where: { id },
         data: body,

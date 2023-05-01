@@ -1,11 +1,11 @@
-import generics from "./genericsTreatments.js";
+import generics from "./treatments.js";
 class Treatment {
   productBody({ name, description, price, promotion, promotionPrice, image }) {
-    generics.name(name);
-    generics.description(description);
-    generics.price(price);
-    generics.promotionalPrice(promotion, promotionPrice);
-    generics.checkDiscountPrice(promotion, promotionPrice, price);
+    generics.checkValue(name, "name");
+    generics.checkValue(description, "description");
+    generics.checkValue(price, "price");
+    generics.checkTwoValues(promotion, promotionPrice, "promotionalPriceEmpty");
+    generics.greaterThan(promotionPrice, price, "promotionalPrice", promotion);
 
     return {
       name,
@@ -17,8 +17,8 @@ class Treatment {
     };
   }
 
-  basic({ name, description, price, promotion, promotionPrice, image }) {
-    generics.basicCheckDiscountPrice(promotionPrice, price);
+  basicProduct({ name, description, price, promotion, promotionPrice, image }) {
+    generics.greaterThan(promotionPrice, price, "productPatch");
 
     return {
       name,

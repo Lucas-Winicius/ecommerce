@@ -1,4 +1,4 @@
-import genericsTreatments from "./genericsTreatments.js";
+import genericsTreatments from "./Validations.js";
 import validator from "validator";
 import argon2 from "argon2";
 
