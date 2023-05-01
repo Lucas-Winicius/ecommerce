@@ -1,4 +1,4 @@
-import userTreatment from "../lib/userTreatment.js";
+import validations from "../lib/validations.js";
 import handlers from "../lib/handlers.js";
 import prisma from "../lib/prisma.js";
 import jwt from "jsonwebtoken";
@@ -9,7 +9,7 @@ class User {
     let userPrisma;
 
     try {
-      user = await userTreatment.treatUser(req.body);
+      user = await validations.userBody(req.body);
       userPrisma = await prisma.user.create({
         data: user,
       });
@@ -38,7 +38,6 @@ class User {
   }
 
   async get(req, res) {
-    console.log(req.hostname);
     function errorMessage() {
       return res
         .cookie("jwt", "", { httpOnly: true, maxAge: 1 })

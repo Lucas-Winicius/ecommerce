@@ -42,4 +42,26 @@ export default {
       "Oops! It looks like someone is trying to play with mathematical logic here... The discount price cannot be greater than the regular price, unless you're in a parallel dimension where that makes sense!",
     emptyField: "promotionPrice",
   },
+  isNotNUmber: {
+    status: 400,
+    message:
+      "The passed parameter is not a number and cannot be converted into one.",
+    secondaryMessage:
+      "Oops, it seems like you tried to trick the system by sending a word as if it were a number. Please try again with a real number, because we don't accept alphabets in place of numbers here!",
+    wrongField: "id",
+  },
+  email: {
+    status: 400,
+    message: "Invalid email",
+    secondaryMessage:
+      "Sorry, it seems like your email is trying to hide from us. Is it perhaps a secret agent? 🕵️‍♂️📧 Please try again with a valid email!",
+    wrongField: "email",
+  },
+  password: {
+    status: 400,
+    message: "The password must be between 8 and 255 characters.",
+    secondaryMessage:
+      "Hmm, your password seems to be quite the rebel, breaking all the rules and marching to the beat of its own drum. Unfortunately, our system prefers more law-abiding passwords. 😜",
+    wrongField: "password",
+  },
 };
