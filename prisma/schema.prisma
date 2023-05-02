@@ -29,6 +29,7 @@ model User {
   password  String
   favorites String[]
   cart      String[]
+  admin     Boolean   @default(false)
   image     String    @default("")
   createdAt DateTime  @default(now())
   updatedAt DateTime? @updatedAt
