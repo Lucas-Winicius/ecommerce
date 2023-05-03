@@ -64,4 +64,16 @@ export default {
       "Hmm, your password seems to be quite the rebel, breaking all the rules and marching to the beat of its own drum. Unfortunately, our system prefers more law-abiding passwords. 😜",
     wrongField: "password",
   },
+  unauthorized: {
+    status: 401,
+    message: "Invalid Credentials",
+    secondaryMessage:
+      "Sorry, it looks like you're not logged in yet. Please log in to proceed. Otherwise, the magical unicorns that grant access to our system won't be able to recognize you. 🦄✨",
+  },
+  invalidCredentials: {
+    status: 401,
+    message: "Invalid Credentials",
+    secondaryMessage:
+      "Oops! It looks like your login credentials are incorrect. Please check and try again. Otherwise, a mischievous troll might be trying to access your account. 🧙‍♂️🔮",
+  },
 };
