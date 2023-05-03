@@ -48,7 +48,7 @@ For development, I recommend the command below:
 ```bash
 npm run start:dev
 ```
-With all the steps complete, we now need to understand a little about all the routes. Or, if you prefer to understand on your own, just read the files inside /src/routes.
+With all the steps complete, we now need to understand a little about all the routes. Or, if you prefer to understand on your own, just read the files inside */src/routes*.
 
 ## *Routes*
 <>
