@@ -1,6 +1,6 @@
 import prisma from "../lib/prisma.js";
 import handlers from "../lib/handlers.js";
-import validations from "../lib/Validations.js";
+import validations from "../lib/validations.js";
 import treatments from "../lib/treatments.js";
 
 class Product {
