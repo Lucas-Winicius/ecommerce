@@ -4,6 +4,7 @@
 Up to this moment (May 2nd, 2023), this API is not yet finalized, so some routes may undergo modifications. Therefore, I ask that you always pay attention to this documentation. I hope you like it!
 
 <hr/>
+
 ## **Installation guide**
 
 ### Cloning the repository and installing dependencies:
