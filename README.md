@@ -52,7 +52,21 @@ npm run start:dev
 With all the steps complete, we now need to understand a little about all the routes. Or, if you prefer to understand on your own, just read the files inside */src/routes*.
 
 ## *Routes*
-<>
+Before we begin, it's important to remember that the routes indicated by * require prior login.
+
+### *`/user - POST`*
+This route will create the user's login and automatically return the authentication cookie.
+
+**Parameters on body:**
+ - `name` - *required parameter*
+ - `email` - *required parameter*
+ - `password` - *required parameter*
+ 
+ ### *`*/user - GET`*
+This route will return the logged-in user, which will be sent by the cookie.
+
+**Parameters on body:**
+ - `none` - *Login information will be sent by cookie.*
 
 <hr/>
 
