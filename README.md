@@ -49,3 +49,15 @@ For development, I recommend the command below:
 npm run start:dev
 ```
 With all the steps complete, we now need to understand a little about all the routes. Or, if you prefer to understand on your own, just read the files inside /src/routes.
+
+## *Routes*
+<>
+
+<hr/>
+
+**Thank you for reading up to this point.**
+
+<div style="display: flex;">
+  <a href="https://www.linkedin.com/in/lucas-winicius-03571725a"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="https://instagram.com/sr_pumpkin_"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
+</div>
