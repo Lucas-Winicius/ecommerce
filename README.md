@@ -1,1 +1,51 @@
-# ecommerce
+# ECOMMERCE - Backend
+>This is my first relatively large project that uses a relational database. Although it is still under development, I believe it is quite complete, and over time, I will make maintenance and improvements. I hope you like it! 😺 <br/>   - Lucas Winicius
+
+Up to this moment (May 2nd, 2023), this API is not yet finalized, so some routes may undergo modifications. Therefore, I ask that you always pay attention to this documentation. I hope you like it!
+
+<hr/>
+## **Installation guide**
+
+### Cloning the repository and installing dependencies:
+
+```bash
+git clone https://github.com/Lucas-Winicius/ecommerce.git
+```
+
+```bash
+cd ecommerce
+```
+
+**Install dependencies:**
+
+```bash
+npm install
+```
+Now that everything is installed, let's configure the environment variables.
+<hr/>
+
+## *Configuring the `.env` file.*
+Create a file called .env at the root of the project, following the parameters of the .env.example file.
+```bash
+PORT=3000
+DATABASE_URL="postgresql://username:pass@host/database"
+JWT_SECRET="random string"
+```
+
+## *Starting the project.*
+To do this, it's very simple. Just execute the commands below. The first one will create the database migrations, and the second one will start your project on the port defined in the .env file.
+
+```bash
+npm run build
+```
+
+```bash
+npm run start
+```
+
+For development, I recommend the command below:
+
+```bash
+npm run start:dev
+```
+With all the steps complete, we now need to understand a little about all the routes. Or, if you prefer to understand on your own, just read the files inside /src/routes.
