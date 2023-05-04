@@ -4,8 +4,8 @@ import checkLogin from "../middleware/checkLogin.js";
 import { Router } from "express";
 const router = new Router();
 
-router.get("/products", controllerProducts.get);
-router.post("/products", controllerProducts.post);
+router.get("/product", controllerProducts.get);
+router.post("/product", controllerProducts.post);
 
 router.get("/product/:id", controllerProduct.get);
 router.delete("/product/:id", checkLogin.verify, controllerProduct.delete);
