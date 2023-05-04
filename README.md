@@ -62,11 +62,24 @@ This route will create the user's login and automatically return the authenticat
  - `email` - *required parameter*
  - `password` - *required parameter*
  
- ### *`*/user - GET`*
+### *`*/user - GET`*
 This route will return the logged-in user, which will be sent by the cookie.
 
 **Parameters on body:**
  - `none` - *Login information will be sent by cookie.*
+ 
+### *`/login - POST`*
+This route will return the login cookie and more information about the user in *`$.data´*.
+
+**Parameters on body:**
+ - `email` - *required parameter*
+ - `password` - *required parameter*
+ 
+### *`/logout - DELETE`*
+This route will delete the user's authentication cookie.
+
+**Parameters on body:**
+ - `none` - *This route does not use parameters in the body.*
 
 <hr/>
 
