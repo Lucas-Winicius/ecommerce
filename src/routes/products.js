@@ -5,7 +5,7 @@ import { Router } from "express";
 const router = new Router();
 
 router.get("/product", controllerProducts.get);
-router.post("/product", controllerProducts.post);
+router.post("/product", checkLogin.verify, controllerProducts.post);
 
 router.get("/product/:id", controllerProduct.get);
 router.delete("/product/:id", checkLogin.verify, controllerProduct.delete);
