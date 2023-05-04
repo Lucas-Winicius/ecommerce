@@ -113,11 +113,71 @@ This route will delete the indicated product.
 This route will update the indicated product.
 
 **Parameters on body:**
- - `name` - *required parameter - String*
- - `description` - *required parameter - String*
- - `price` - *required parameter - Number*
- - `promotion` - *required parameter - Float*
- - `promotionPrice` - *required parameter - Float*
+ - `name` - *optional parameter - String*
+ - `description` - *optional parameter - String*
+ - `price` - *optional parameter - Number*
+ - `promotion` - *optional parameter - Float*
+ - `promotionPrice` - *optional parameter - Float*
+
+Now that you know how to use the available routes, let's learn more about the available returns.
+
+## *Returns*
+In general, all returns will have a pattern, whether in case of success or in case of error.
+
+### **On Error**
+In case of error, the returned structure will be:
+
+```json
+{
+  "success": false,
+  "status": 500,
+  "message": "There was an error that we couldn't find the reason for.",
+  "secondaryMessage": "It seems like there's a ghost in the system! We tried to find the error, but it mysteriously vanished. We're working on exorcising it and solving the issue, please try again later.",
+  "error": {}
+}
+```
+
+#### **`succes`**
+Always in case of error, it will return **false**.
+
+#### **`status`**
+Request status.
+
+#### **`message`**
+Error message.
+
+#### **`secondaryMessage`**
+A message with a pinch of humor.
+
+#### **`error`**
+Full error object.
+
+### **On Success**
+In case of success, the returned structure will be.
+
+```json
+{
+  "success": true,
+  "status": 200,
+  "message": "Congratulations, the operation was successfully completed!",
+  "secondaryMessage": "Success guaranteed, you are more efficient than a robotic vacuum cleaner! Congratulations on your achievement!",
+  "data": {}
+}
+```
+#### **`succes`**
+Always in case of error, it will return **true**.
+
+#### **`status`**
+Request status.
+
+#### **`message`**
+Success message.
+
+#### **`secondaryMessage`**
+A message with a pinch of humor.
+
+#### **`data`**
+data returned from successful request
 
 <hr/>
 
