@@ -58,28 +58,66 @@ Before we begin, it's important to remember that the routes indicated by * requi
 This route will create the user's login and automatically return the authentication cookie.
 
 **Parameters on body:**
- - `name` - *required parameter*
- - `email` - *required parameter*
- - `password` - *required parameter*
- 
+ - `name` - *required parameter - String*
+ - `email` - *required parameter - String*
+ - `password` - *required parameter - String*
+
 ### *`*/user - GET`*
 This route will return the logged-in user, which will be sent by the cookie.
 
 **Parameters on body:**
  - `none` - *Login information will be sent by cookie.*
- 
+
 ### *`/login - POST`*
 This route will return the login cookie and more information about the user in *`$.data´*.
 
 **Parameters on body:**
- - `email` - *required parameter*
- - `password` - *required parameter*
- 
+ - `email` - *required parameter - String*
+ - `password` - *required parameter - String*
+
 ### *`/logout - DELETE`*
 This route will delete the user's authentication cookie.
 
 **Parameters on body:**
  - `none` - *This route does not use parameters in the body.*
+
+### *`/product - GET`*
+This route will return all registered products.
+
+**Parameters on body:**
+ - `none` - *This route does not use parameters in the body.*
+
+### *`/product/:id - GET`*
+This route will return a product.
+
+**Parameters on body:**
+ - `none` - *This route does not use parameters in the body.*
+
+### *`*/product - POST`*
+This route will register a new product.
+
+**Parameters on body:**
+ - `name` - *required parameter - String*
+ - `description` - *required parameter - String*
+ - `price` - *required parameter - Number*
+ - `promotion` - *required parameter - Float*
+ - `promotionPrice` - *required parameter - Float*
+
+### *`*/product/:id - DELETE`*
+This route will delete the indicated product.
+
+**Parameters on body:**
+ - `none` - *This route does not use parameters in the body.*
+
+### *`*/product/:id - PATCH`*
+This route will update the indicated product.
+
+**Parameters on body:**
+ - `name` - *required parameter - String*
+ - `description` - *required parameter - String*
+ - `price` - *required parameter - Number*
+ - `promotion` - *required parameter - Float*
+ - `promotionPrice` - *required parameter - Float*
 
 <hr/>
 
