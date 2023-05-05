@@ -76,4 +76,10 @@ export default {
     secondaryMessage:
       "Oops! It looks like your login credentials are incorrect. Please check and try again. Otherwise, a mischievous troll might be trying to access your account. 🧙‍♂️🔮",
   },
+  emptyCookie: {
+    status: 401,
+    message: "Access denied. You need to log in to perform this action.",
+    secondaryMessage:
+      "Oops! Looks like you're not logged in. Time to enter your secret passcode and unlock the mysteries of this feature!",
+  },
 };
